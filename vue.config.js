@@ -5,7 +5,7 @@ module.exports = {
             navigateFallback: '/index.html',
             runtimeCaching: [
                 {
-                    urlPattern: new RegExp('^https://bookstore-87700.firebaseapp.com'),
+                    urlPattern: new RegExp('https://www.googleapis.com'),
                     handler: 'networkFirst',
                     options: {
                         networkTimeoutSeconds: 30,

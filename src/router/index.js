@@ -1,8 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
-Vue.use(VueRouter)
+import { IonicVueRouter } from '@ionic/vue';
+Vue.use(IonicVueRouter);
 
 const routes = [
   {
@@ -11,16 +10,22 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/book/:id',
+    name: 'book',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/viewBook.vue')
+  },
+  {
+      path: '/preview',
+      name: 'preview',
+      component: () => import(/* webpackChunkName: "about" */ '../views/preview.vue'),
+      props:true
   }
 ]
 
-const router = new VueRouter({
+const router = new IonicVueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
