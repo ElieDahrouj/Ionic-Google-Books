@@ -18,10 +18,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/viewBook.vue')
   },
   {
-      path: '/preview',
+      path: '/preview/:id',
       name: 'preview',
       component: () => import(/* webpackChunkName: "about" */ '../views/preview.vue'),
-      props:true
   }
 ]
 

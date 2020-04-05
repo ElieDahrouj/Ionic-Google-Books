@@ -2,7 +2,7 @@
     <div class="ion-page">
         <ion-header>
             <div class="ion-padding" style="text-align: left; background-color: #09114D">
-                <router-link :to='"/book/"+this.id'><button class="btn"><ion-icon style="color: white;font-size: 22px" name="arrow-back"></ion-icon></button></router-link>
+                <router-link :to='"/book/"+this.$route.params.id'><button class="btn"><ion-icon style="color: white;font-size: 22px" name="arrow-back"></ion-icon></button></router-link>
             </div>
         </ion-header>
 
@@ -13,9 +13,6 @@
 <script>
     export default {
         name:"preview",
-        props:{
-          id : String
-        },
         mounted(){
             setTimeout (() => {this.initialize();}, 1000);
 
@@ -23,7 +20,7 @@
         methods:{
             initialize() {
                 let viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-                viewer.load(this.id);
+                viewer.load(this.$route.params.id);
             },
         }
     }
@@ -33,5 +30,6 @@
         padding:10px;
         border-radius: 100%;
         background-color: #09114D;
+        outline: none;
     }
 </style>

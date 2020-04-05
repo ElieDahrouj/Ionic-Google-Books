@@ -28,7 +28,7 @@
           <p class="description">{{this.infoBook.description}}</p>
         </div>
         <div v-if="this.accessPreview !== false">
-          <router-link :to="{name: 'preview', params: { id: this.$route.params.id}}"><button class="btn">Preview</button></router-link>
+          <router-link :to='"/preview/"+this.$route.params.id'><button class="btn">Preview</button></router-link>
         </div>
       </section>
     </ion-content>
@@ -97,6 +97,7 @@
     border-radius: 3px;
     border:1px solid #09114D;
     background-color: transparent;
+    outline: none;
     color: black;
     font-size: 20px;
   }
